@@ -8,29 +8,45 @@ import { exploreWorlds } from "../constants";
 import styles from "../styles";
 import { staggerContainer } from "../utils/motion";
 
-const Explore = () => (
-  <section className={`${styles.paddings}`} id="explore">
-    <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col`}
-    >
-      {/* Title */}
-      <TypingText title="| The World" textAlign="text-center" />
-      {/* Sub Title */}
-      <TitleText
-        title={
-          <>
-            Choose the World you want to <br className="md:block hidden" /> explore with us 😌.
-          </>
-        }
-        textAlign="text-center"
-      />
-    </motion.div>
-    Explore section
-  </section>
-);
+const Explore = () => {
+  const [active, setActive] = useState("world-2");
+  return (
+    <section className={`${styles.paddings}`} id="explore">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={`${styles.innerWidth} mx-auto flex flex-col`}
+      >
+        {/* Title */}
+        <TypingText title="| The World" textAlign="text-center" />
+        {/* Sub Title */}
+        <TitleText
+          title={
+            <>
+              Choose the World you want to <br className="md:block hidden" />{" "}
+              explore with us 😌.
+            </>
+          }
+          textAlign="text-center"
+        />
+
+        {/* Image Slider */}
+        <div className="mt-[12px] flex lg:flex-row flex-col m-h-[10vh] gap-5">
+          {exploreWorlds?.map((world, index) => (
+            <ExploreCard
+              key={world.id}
+              {...world}
+              index={index}
+              active={active}
+              handleClick={setActive}
+            />
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
 
 export default Explore;
