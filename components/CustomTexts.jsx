@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { textVariant2, textContainer } from "../utils/motion";
+import { textVariant2, textContainer, fadeIn } from "../utils/motion";
+import styles from "../styles";
 
 export const TypingText = ({ title, textAlign }) => (
   <motion.p
@@ -21,9 +22,9 @@ export const TypingText = ({ title, textAlign }) => (
 
 export const TitleText = ({ title, textAlign }) => (
   <motion.h2
-    variants={textVariant2}
+  variants={textVariant2}
     initial="hidden"
     whileInView="show"
     className={`${textAlign} mt-[10px] font-bold text-secondary-white sm:text-[38px] text-[20px] `}
-  >{title}</motion.h2>
+  ></motion.h2>
 );

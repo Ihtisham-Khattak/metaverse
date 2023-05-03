@@ -38,8 +38,9 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
             className="object-contain w-1/2 h-1/2 "
           />
         </div>
+        {/* Leading: Line Height */}
         <p className="text-white leading-04 uppercase relative z-10">
-          Enter the Metaverse
+          What is the Metaverse
         </p>
         <h2 className="font-semibold sm:text-[24px] text-[18px] text-white leading-02 relative z-10">
           {title}
