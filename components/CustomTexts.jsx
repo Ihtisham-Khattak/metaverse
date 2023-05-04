@@ -26,5 +26,5 @@ export const TitleText = ({ title, textAlign }) => (
     initial="hidden"
     whileInView="show"
     className={`${textAlign} mt-[10px] font-bold text-secondary-white sm:text-[38px] text-[20px] `}
-  ></motion.h2>
+  >{title}</motion.h2>
 );
