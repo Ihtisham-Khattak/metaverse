@@ -26,7 +26,7 @@ const GetStarted = () => (
         <img
           src="/get-started.png"
           alt="get started"
-          className="w-[70%] h-[70%] object-contain"
+          className="w-[75%] h-[75%] object-contain"
         />
       </motion.div>
 
@@ -39,6 +39,13 @@ const GetStarted = () => (
       >
         <TypingText title="| How metawerse work" textAlign="text-center" />
         <TitleText title={<>Get Started with just a few clicks</>} />
+
+        {/* Counter Text */}
+        <div className="mt-[20px] flex flex-col gap-5 max-w-[370px]">
+          {startingFeatures?.map((feature, index) => (
+            <StartSteps key={feature} text={feature} number={index + 1} />
+          ))}
+        </div>
       </motion.div>
     </motion.div>
     Get Started Section
