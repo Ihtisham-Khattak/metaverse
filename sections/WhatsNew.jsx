@@ -27,7 +27,7 @@ const WhatsNew = () => (
         <TitleText title={<>What's new about the Metaverse</>} />
 
         {/* Counter Text */}
-        <div className="mt-[20px] flex flex-col gap-5 max-w-[30px]">
+        <div className="mt-[20px] flex flex-col gap-5 flex-wrap">
           {newFeatures?.map((feature, index) => (
             <NewFeatures key={feature.title} {...feature}  />
           ))}
