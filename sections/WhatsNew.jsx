@@ -8,7 +8,7 @@ import { NewFeatures, TypingText, TitleText } from "../components";
 import { newFeatures } from "../constants";
 
 const WhatsNew = () => (
-  <motion.section className={`${styles.paddings} relative z-10`}>
+  <motion.section className={`${styles.paddings} relative left-14 z-10`}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -27,7 +27,7 @@ const WhatsNew = () => (
         <TitleText title={<>What's new about the Metaverse</>} />
 
         {/* Counter Text */}
-        <div className="mt-[20px] flex flex-col gap-5 flex-wrap">
+        <div className="mt-[20px] flex flex-wrap justify-between gap-4">
           {newFeatures?.map((feature, index) => (
             <NewFeatures key={feature.title} {...feature}  />
           ))}
@@ -35,7 +35,7 @@ const WhatsNew = () => (
       </motion.div>
       {/* Orbit Style */}
       <motion.div
-        variants={planetVariants("left")}
+        variants={planetVariants("right")}
         initial="hidden"
         whileInView="show"
         className={`flex-1 ${styles.flexCenter}`}
